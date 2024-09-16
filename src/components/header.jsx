@@ -4,7 +4,7 @@ import "../css/header.css"
 import bannerImage from '../images/restauranfood.jpg'
 export function Header() {
     return (
-        <header className='header p-5'>
+        <header className='header sectionBG p-5'>
             <section className='container'>
                 <div>
                     <h2>Little Lemon</h2>

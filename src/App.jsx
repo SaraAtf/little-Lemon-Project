@@ -1,11 +1,9 @@
+import { Main } from "./components";
 
-import { Nav, Header, BookingForm } from "./components";
+
+
 function App() {
-	return <>
-		<Nav />
-		<Header />
-		<BookingForm />
-	</>;
+	return <Main />;
 }
 
 export default App;

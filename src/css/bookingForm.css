@@ -1,0 +1,37 @@
+fieldset {
+	justify-content: space-between;
+}
+fieldset > div.formInput {
+	/* border: 1px solid #000; */
+	color: #fff;
+	flex-basis: 45%;
+}
+.inputContainer {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	position: relative;
+}
+.inputContainer i {
+	position: absolute;
+	color: #333;
+	font-size: 16px;
+	left: 10px;
+}
+.inputContainer input,
+.inputContainer select {
+	width: 100%;
+	padding: 10px 10px 10px 40px;
+	border-radius: 2px;
+}
+select,
+input {
+	outline: 0;
+	border: none;
+}
+@media screen and (max-width: 425px) {
+	fieldset {
+		flex-direction: column;
+		/* align-items: center; */
+	}
+}

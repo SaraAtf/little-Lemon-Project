@@ -1,5 +1,6 @@
 :root {
-	--main-color: #000;
+	--main-color: #495e57;
+	--secondary-color: #f4ce14;
 }
 
 body {
@@ -24,16 +25,10 @@ a {
 li {
 	list-style: none;
 }
-@media screen and (max-width: 768px) {
-	ul {
-		display: none;
-	}
-	.bannerImg {
-		display: none;
-	}
+
+.primaryColor {
+	color: #f4ce14;
 }
-@media screen and (min-width: 769px) {
-	.bars {
-		display: none;
-	}
+.sectionBG {
+	background-color: #495e57;
 }
