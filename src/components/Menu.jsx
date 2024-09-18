@@ -1,9 +1,17 @@
 import React from "react";
 import { recipes } from "../recipes";
 import '../css/menu.css'
+import Swal from 'sweetalert2'
+
 export function Menu() {
 	const orderNow = ( id ) => {
-		console.log( id )
+		Swal.fire( {
+			position: "center",
+			icon: "success",
+			title: "Your Order has been saved",
+			showConfirmButton: false,
+			timer: 1500
+		} );
 	}
 	return <div className='menu-container mb-5'>
 		<div className="container">

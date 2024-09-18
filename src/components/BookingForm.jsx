@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../css/bookingForm.css'
 import { useNavigate } from 'react-router-dom';
 export function BookingForm( { dispatch, availableTimes } ) {
+
+
     const navigate = useNavigate()
     const [ reservationForm, setReservationForm ] = useState( {
         date: '',
@@ -9,8 +11,30 @@ export function BookingForm( { dispatch, availableTimes } ) {
         guests: '',
         occasion: ''
     } );
+    const [ errors, setErrors ] = useState( {
+        date: null,
+        times: null,
+        guests: null,
+        occasion: null
+    } )
+
+    const isEmpty = ( field ) => {
+        return field.length == 0
+    }
+
     const submitAPI = function ( formData ) {
-        return true;
+        let newError = { ...errors }
+        Object.entries( formData ).forEach( prop => {
+            if ( isEmpty( prop[ 1 ] ) ) {
+                newError[ prop[ 0 ] ] = `${prop[ 0 ]} is Required`
+            }
+        } )
+
+        setErrors( {
+            ...errors,
+            ...newError
+        } )
+        return Object.values( newError ).every( value => value == null )
     };
 
 
@@ -19,6 +43,8 @@ export function BookingForm( { dispatch, availableTimes } ) {
         dispatch()
         if ( submitAPI( reservationForm ) ) {
             navigate( '/confirmed' )
+        } else {
+            console.log( "INVALID" )
         }
 
     }
@@ -26,6 +52,10 @@ export function BookingForm( { dispatch, availableTimes } ) {
         setReservationForm( {
             ...reservationForm,
             [ e.target.name ]: e.target.value
+        } )
+        setErrors( {
+            ...errors,
+            [ e.target.name ]: null
         } )
     }
     return (
@@ -51,7 +81,8 @@ export function BookingForm( { dispatch, availableTimes } ) {
                             )}
                         </select>
                     </div>
-
+                    {errors.times && <p className='text-danger'>Time is Required</p>
+                    }
                 </div>
             </fieldset>
             <fieldset className='d-flex' >
@@ -72,7 +103,9 @@ export function BookingForm( { dispatch, availableTimes } ) {
                             <option>Anniversary</option>
                         </select>
                     </div>
+                    {errors.occasion && <p className='text-danger'>Occasion is Required</p>}
                 </div>
+
             </fieldset>
             <div className='btnReceive'>
                 <input className='btn btn-warning mx-3' aria-label='On Click' type="submit" value={"Make Your Reservation"} />
