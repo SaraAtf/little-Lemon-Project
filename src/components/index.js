@@ -5,5 +5,15 @@ import { Main } from "./Main";
 import { Booking } from "./Booking";
 import { ConfirmedBooking } from "./ConfirmedBooking";
 import { Menu } from "./Menu";
+import { Footer } from "./Footer";
 
-export { Nav, Header, BookingForm, Main, Booking, ConfirmedBooking, Menu };
+export {
+	Nav,
+	Header,
+	BookingForm,
+	Main,
+	Booking,
+	ConfirmedBooking,
+	Menu,
+	Footer,
+};

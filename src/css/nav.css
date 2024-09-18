@@ -13,18 +13,17 @@ nav .container {
 	background-color: #000;
 	margin: 5px 0px;
 }
-a {
+nav a {
 	color: #000 !important;
 }
-ul {
+nav ul {
 	flex-basis: 70%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 !important;
-	/* display: none; */
 }
-ul.visible {
+nav ul.visible {
 	display: flex;
 	flex-direction: column;
 	position: absolute;

@@ -1,0 +1,25 @@
+.footerContainer .container {
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.footerContainer .foot {
+	flex: 1;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footerContainer .foot ul {
+	padding: 0;
+}
+.footerContainer .foot ul li {
+	padding: 8px 0px 8px 0px;
+}
+.footerContainer .foot ul li a {
+	color: #fff;
+	cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+	.footerContainer .container {
+		flex-direction: column;
+	}
+}

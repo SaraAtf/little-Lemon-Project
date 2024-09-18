@@ -1,11 +1,12 @@
 import React from 'react'
-import { Header, Menu } from '../components'
+import { Header, Menu, Footer } from '../components'
 
 export function Home() {
     return (
         <>
             <Header />
             <Menu />
+            <Footer />
         </>
     )
 }
